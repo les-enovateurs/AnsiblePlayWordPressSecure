@@ -1,0 +1,20 @@
+- hosts: all
+  become: yes
+  become_method: sudo
+  # What tasks do we need to run?
+  roles:
+  - geerlingguy.apache
+  - geerlingguy.php-versions
+  - geerlingguy.php
+  - geerlingguy.mysql
+  - geerlingguy.php-mysql
+  - oefenweb.wordpress
+  - oefenweb.fail2ban
+  #  - memiah.fail2ban-wordpress
+  #- geerlingguy.security - https://github.com/geerlingguy/ansible-role-security
+  # https://github.com/geerlingguy/ansible-role-certbot
+  #https://github.com/geerlingguy/ansible-role-pimpmylog
+  vars_files:
+    - main.yml
+
+    
